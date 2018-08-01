@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	{% block head %}
+	<meta charset="UTF-8">
+	<title> 统一信息门户平台 </title>
+	 <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/js/bootstrap-datetimepicker.min.js"></script>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/bootstrap-datetimepicker.min.css">
+	{% endblock %}
+</head>
+<body>
+{% block header %}
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="" href="/">
+        <img alt="许昌学院" src="/static/img/1.jpg" style="width:80px; height: 80px;">
+      </a>
+    </div>
+    <div class="navbar-header" style="font-size: 25px; margin-left: 30px; margin-top: 10px; height: 80px;">
+		统一信息门户平台
+    </div>
+  	<div class="navbar-right" style="margin-top:26px;">
+		<a href="/login" class="btn btn-default" > {{ username }} 登录</a>
+		<a href="/register" class="btn btn-primary">注册</a>
+		<a href="/logout" class="btn btn-warning">退出</a>
+  	</div>
+  </div>
+</nav>
+{% endblock %}
+
+<div style="height: 600px;">
+{% block body %}
+content
+{% endblock %}
+</div>
+
+{% block footer %}
+<hr>
+<p style="font-size:15px; margin-left: 600px;" >copyright @ 许昌学院.ALL Rights Reserved.</p>
+{% endblock %}
+</body> 
+</html>

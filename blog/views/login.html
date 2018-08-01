@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class="row" style="margin:20px;">
+  <div class="col-xs-6 col-md-8">
+	<p>
+		<h2 style="color:blue;">系统使用说明</h2>
+		1、用户说明：登录名为教工号或学号。<br>
+		2、密码说明：初始密码为个人身份证号码后六位（最后一位为“X”，替换成“1”），密码区分大小写。<br>
+		3、自助找回密码：登录成功后，请在用户头像右侧【个人设置】中完善个人邮箱信息。之后方可通过点击登录界面上的“忘记了密码？”链接来找回遗忘的密码。<br>
+		4、人工找回密码：若采用邮箱自助找回密码方法失效，请向数字化校园办公室申请找回密码。具体流程请参考链接：<a href="http://wlzx.xcu.edu.cn/info/1064/1123.htm" style="color:red;">http://wlzx.xcu.edu.cn/info/1064/1123.htm。</a><br>
+		5、其他：用户登录后可直接获取邮件等私人信息，请谨慎保管密码
+	</p>
+  </div>
+  <div class="col-xs-6 col-md-4">
+  	<form id="form" method="post" action="/login">
+  	  <h2 style="color:blue; ">用户登录</h2>
+	  <div class="form-group">
+	    <label for="exampleInputUser" style="color:#aaa; ">登录名：</label>
+	    <input type="text" name="user" class="form-control" id="exampleInputUser">
+	  </div>
+	  <div class="form-group">
+	    <label for="exampleInputPassword" style="color:#aaa; ">密码: </label>
+	    <input type="password" name="password" class="form-control" id="exampleInputPassword1">
+	  </div>
+	  <p id="errMessage" style="color:red;"> {{ errMessage }} </p>
+	  <button type="submit" class="btn btn-primary">
+	  登录</button>
+	  <a href="/" style="color:red;" > 忘记了密码？</a>
+	</form>
+  </div>
+</div>
+<script type="text/javascript">
+	$("#form").submit(function(e){
+		console.log("This::",this);
+		var form={};
+		form.user=this.user.value;
+		form.password=this.password.value;
+	});
+</script>
+{% endblock %}
